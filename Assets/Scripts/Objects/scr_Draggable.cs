@@ -7,6 +7,7 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
     [Header("Objects with this script class can be\ngrabbed and dragged with the mouse.")]
     public bool disableOnStart = true;
     [Header("Components")]
+    [DisplayWithoutEdit] public Transform initialParent;
     [DisplayWithoutEdit] public Canvas canvas;
     [DisplayWithoutEdit] public RectTransform rectTransform;
     [DisplayWithoutEdit] public CanvasGroup canvasGroup;
@@ -27,6 +28,7 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
 
     void GetComponents()
     {
+        initialParent = transform.parent;
         canvas = GetComponentInParent<Canvas>();
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
@@ -43,6 +45,7 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
         Debug.Log("OnBeginDrag");
         canvasGroup.alpha = 0.6f;
         canvasGroup.blocksRaycasts = false;
+        transform.parent = initialParent;
     }
 
     public void OnDrag(PointerEventData _eventData)
