@@ -11,8 +11,8 @@ using UnityEngine.UI;
 public class InputManager : MonoBehaviour, IPointerDownHandler, IPointerClickHandler
 {
     static public InputManager instance;
-    public Canvas paintCanvas;
-    public Collider2D hoardThing;
+    public GameObject paintContent;
+    public GameObject hoardContent;
     public Draggable selectedObject;
     [DisplayWithoutEdit] private Vector3 offset;
 
@@ -55,7 +55,8 @@ public class InputManager : MonoBehaviour, IPointerDownHandler, IPointerClickHan
 
                 offset = selectedObject.transform.position - _mousePosition;
 
-                selectedObject.SetCanvas(paintCanvas);
+                //selectedObject.SetCanvas(paintCanvas);
+                selectedObject.transform.SetParent(paintContent.transform, true);
                 selectedObject.GetComponent<Collider2D>().enabled = false;
             }
         }
