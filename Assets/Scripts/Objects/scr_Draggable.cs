@@ -47,7 +47,7 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
 
     public void OnDrag(PointerEventData _eventData)
     {
-        Debug.Log("OnDrag");
+        //Debug.Log("OnDrag");
         rectTransform.anchoredPosition += _eventData.delta / canvas.scaleFactor; // Move position based on cursor movement, adjusted by canvas scale
     }
 

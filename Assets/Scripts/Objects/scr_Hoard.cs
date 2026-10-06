@@ -6,5 +6,9 @@ public class Hoard : MonoBehaviour, IDropHandler
     public void OnDrop(PointerEventData _eventData)
     {
         Debug.Log("OnDrop");
+        if (_eventData.pointerDrag != null)
+        {
+            _eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+        }
     }
 }
