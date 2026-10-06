@@ -1,19 +1,34 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 /*
  * Code Sources:
  * https://gamedevbeginner.com/how-to-move-an-object-with-the-mouse-in-unity-in-2d/
  */
 
-public class InputManager : MonoBehaviour
+public class InputManager : MonoBehaviour, IPointerDownHandler, IPointerClickHandler
 {
-    public GameObject selectedObject;
+    static public InputManager instance;
+    public Canvas paintCanvas;
+    public Collider2D hoardThing;
+    public Draggable selectedObject;
     [DisplayWithoutEdit] private Vector3 offset;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        // Cancel if instance exists
+        if (instance)
+        if (instance.isActiveAndEnabled)
+        {
+            Destroy(this);
+            return;
+        }
+
+        // Set instance
+        instance = this;
     }
 
     void Update()
@@ -21,7 +36,7 @@ public class InputManager : MonoBehaviour
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         TrySelectObject(mousePosition);
-        TryDeselectObject();
+        TryDeselectObject(mousePosition);
         TryMoveObject(mousePosition);
     }
 
@@ -31,23 +46,41 @@ public class InputManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && Physics2D.OverlapPoint(_mousePosition))
         {
             Collider2D[] results = Physics2D.OverlapPointAll(_mousePosition);
-            Collider2D highestCollider = GetHighestDraggable(results);
+            Draggable highestDraggable = GetHighestDraggable(results);
 
-            if (highestCollider)
+            if (highestDraggable)
             {
-                selectedObject = highestCollider.transform.gameObject;
+                // Confirm selection of object
+                selectedObject = highestDraggable;
 
                 offset = selectedObject.transform.position - _mousePosition;
+
+                selectedObject.SetCanvas(paintCanvas);
+                selectedObject.GetComponent<Collider2D>().enabled = false;
             }
         }
     }
 
-    private void TryDeselectObject()
+    private void TryDeselectObject(Vector3 _mousePosition)
     {
         if (Input.GetMouseButtonUp(0) && selectedObject)
         {
+            if (!selectedObject.IsDestroyed())
+            {
+                selectedObject.GetComponent<Collider2D>().enabled = true;
+            }
             selectedObject = null;
         }
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Debug.Log("Clicked");
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        Debug.Log("Down");
     }
 
     private void TryMoveObject(Vector3 _mousePosition)
@@ -58,10 +91,10 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    Collider2D GetHighestDraggable(Collider2D[] _results)
+    Draggable GetHighestDraggable(Collider2D[] _results)
     {
         int highestValue = 0;
-        Collider2D highestDraggable = null;
+        Draggable highestDraggable = null;
 
         foreach (Collider2D col in _results)
         {
@@ -69,11 +102,11 @@ public class InputManager : MonoBehaviour
             if (col.gameObject.GetComponent<Draggable>() == null) continue;
 
             // Check if Draggable is rendered above existing selection
-            Renderer ren = col.gameObject.GetComponent<Renderer>();
+            Canvas ren = col.gameObject.GetComponent<Draggable>().canvas;
             if (highestDraggable == null || (ren && ren.sortingOrder > highestValue))
             {
                 highestValue = ren.sortingOrder;
-                highestDraggable = col;
+                highestDraggable = col.gameObject.GetComponent<Draggable>();
             }
         }
 
