@@ -43,9 +43,12 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
     public void OnBeginDrag(PointerEventData _eventData)
     {
         Debug.Log("OnBeginDrag");
+        // Change appearance and raycast effects
         canvasGroup.alpha = 0.6f;
         canvasGroup.blocksRaycasts = false;
+        // Set parent onto painting area
         transform.parent = resetToParent;
+        transform.SetAsLastSibling(); // This also moves on top of other instances on the same sorting layer
     }
 
     public void OnDrag(PointerEventData _eventData)
@@ -57,8 +60,10 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
     public void OnEndDrag(PointerEventData _eventData)
     {
         Debug.Log("OnEndDrag");
+        // Change appearance and raycast effects
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
+        // See scr_Hoard.cs for changing parent on drop
     }
 
     public void OnPointerDown(PointerEventData _eventData)
