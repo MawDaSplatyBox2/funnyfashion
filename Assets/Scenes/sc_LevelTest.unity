@@ -127,6 +127,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2023042170}
     m_Modifications:
+    - target: {fileID: 2206146724705985912, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
+      propertyPath: thisDoesNothing
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3445769171070143237, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
       propertyPath: m_Name
       value: Draggable_Item (8)
@@ -211,6 +215,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7657770963865968052, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72b6c09869398c14ba9e52e1fcde0a46, type: 3}
     - target: {fileID: 7657770963865968052, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -419,6 +427,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2023042170}
     m_Modifications:
+    - target: {fileID: 2206146724705985912, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
+      propertyPath: thisDoesNothing
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3445769171070143237, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
       propertyPath: m_Name
       value: Draggable_Item (0)
@@ -522,10 +534,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3445769171070143237, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1212608039}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
 --- !u!224 &87239308 stripped
 RectTransform:
@@ -718,6 +727,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2023042170}
     m_Modifications:
+    - target: {fileID: 2206146724705985912, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
+      propertyPath: thisDoesNothing
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3445769171070143237, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
       propertyPath: m_Name
       value: Draggable_Item (7)
@@ -856,6 +869,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2023042170}
     m_Modifications:
+    - target: {fileID: 2206146724705985912, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
+      propertyPath: thisDoesNothing
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3445769171070143237, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
       propertyPath: m_Name
       value: Draggable_Item (12)
@@ -1420,6 +1437,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2023042170}
     m_Modifications:
+    - target: {fileID: 2206146724705985912, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
+      propertyPath: thisDoesNothing
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3445769171070143237, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
       propertyPath: m_Name
       value: Draggable_Item (9)
@@ -1504,6 +1525,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7657770963865968052, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72b6c09869398c14ba9e52e1fcde0a46, type: 3}
     - target: {fileID: 7657770963865968052, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -1829,6 +1854,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2023042170}
     m_Modifications:
+    - target: {fileID: 2206146724705985912, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
+      propertyPath: thisDoesNothing
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3445769171070143237, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
       propertyPath: m_Name
       value: Draggable_Item (11)
@@ -1913,6 +1942,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7657770963865968052, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2731d2de4f3146a4a920b7407a399f70, type: 3}
     - target: {fileID: 7657770963865968052, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
       propertyPath: m_Color.b
       value: 0.97224796
@@ -2136,23 +2169,6 @@ CanvasGroup:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174014343}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
---- !u!1 &1212608035 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3445769171070143237, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
-  m_PrefabInstance: {fileID: 87239307}
-  m_PrefabAsset: {fileID: 0}
---- !u!225 &1212608039
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1212608035}
   m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
@@ -2504,6 +2520,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2023042170}
     m_Modifications:
+    - target: {fileID: 2206146724705985912, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
+      propertyPath: thisDoesNothing
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3445769171070143237, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
       propertyPath: m_Name
       value: Draggable_Item (6)
@@ -2539,6 +2559,14 @@ PrefabInstance:
     - target: {fileID: 7392940033087170633, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
       propertyPath: m_SizeDelta.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392940033087170633, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392940033087170633, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 186
       objectReference: {fileID: 0}
     - target: {fileID: 7392940033087170633, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2589,16 +2617,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7657770963865968052, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 92b2eae777848454d83017148da8c491, type: 3}
+    - target: {fileID: 7657770963865968052, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
       propertyPath: m_Color.b
-      value: 0.71609133
+      value: 0.9622642
       objectReference: {fileID: 0}
     - target: {fileID: 7657770963865968052, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0.75800997
       objectReference: {fileID: 0}
     - target: {fileID: 7657770963865968052, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
       propertyPath: m_Color.r
-      value: 0.45882356
+      value: 0.90468603
       objectReference: {fileID: 0}
     - target: {fileID: 8624439857195052864, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
       propertyPath: resetToParent
@@ -3085,6 +3117,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2023042170}
     m_Modifications:
+    - target: {fileID: 2206146724705985912, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
+      propertyPath: thisDoesNothing
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3445769171070143237, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
       propertyPath: m_Name
       value: Draggable_Item (10)
@@ -3169,6 +3205,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7657770963865968052, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5abe5e0c9efa4b7469f61f4bc9efae00, type: 3}
     - target: {fileID: 7657770963865968052, guid: 5db7713b4aa639241a94cbf870931fbb, type: 3}
       propertyPath: m_Color.b
       value: 1

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7602595344347926636}
   - component: {fileID: 8391380839823925912}
   - component: {fileID: 8998322131315095275}
+  - component: {fileID: 6265733345248444764}
   m_Layer: 0
   m_Name: Draggable
   m_TagString: Untagged
@@ -81,6 +82,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableOnStart: 1
+  resetToParent: {fileID: 0}
+  canvas: {fileID: 0}
+  rectTransform: {fileID: 0}
+  canvasGroup: {fileID: 0}
 --- !u!222 &8998322131315095275
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -89,3 +94,15 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3176677096077215453}
   m_CullTransparentMesh: 1
+--- !u!225 &6265733345248444764
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3176677096077215453}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
