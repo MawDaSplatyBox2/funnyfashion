@@ -46,11 +46,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7303987553923851665, guid: f5b7dc67032d547469fe0454854e0289, type: 3}
       propertyPath: m_LocalScale.x
-      value: 46
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 7303987553923851665, guid: f5b7dc67032d547469fe0454854e0289, type: 3}
       propertyPath: m_LocalScale.y
-      value: 32
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 7303987553923851665, guid: f5b7dc67032d547469fe0454854e0289, type: 3}
       propertyPath: m_LocalScale.z
@@ -107,7 +107,7 @@ PrefabInstance:
     - target: {fileID: 7602595344347926636, guid: f5b7dc67032d547469fe0454854e0289, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: fb44e95249fbc9b41a66f00ef2cbda24, type: 3}
+      objectReference: {fileID: 21300000, guid: e3eccc5fd680c44409f3d679d8d7694a, type: 3}
     - target: {fileID: 7602595344347926636, guid: f5b7dc67032d547469fe0454854e0289, type: 3}
       propertyPath: m_Color.b
       value: 1

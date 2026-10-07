@@ -11,6 +11,11 @@ public class ResizeImage : MonoBehaviour
         UpdateImageSize();
     }
 
+    private void Start()
+    {
+        UpdateImageSize();
+    }
+
     public void UpdateImageSize(Image _image = null)
     {
         if (!_image) _image = GetComponent<Image>();
