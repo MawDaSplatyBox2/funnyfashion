@@ -6,8 +6,10 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
 {
     [Header("Objects with this script class can be\ngrabbed and dragged with the mouse.")]
     public bool disableOnStart = true;
+    public bool hoardable = false;
     [Header("Components")]
     public Transform resetToParent;
+    public Transform dropOnParent;
     [DisplayWithoutEdit] public Canvas canvas;
     [DisplayWithoutEdit] public RectTransform rectTransform;
     [DisplayWithoutEdit] public CanvasGroup canvasGroup;
@@ -46,8 +48,8 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
         // Change appearance and raycast effects
         canvasGroup.alpha = 0.6f;
         canvasGroup.blocksRaycasts = false;
-        // Set parent onto painting area
-        transform.parent = resetToParent;
+        // Move onto parent
+        if (resetToParent) transform.parent = resetToParent;
         transform.SetAsLastSibling(); // This also moves on top of other instances on the same sorting layer
     }
 
@@ -64,6 +66,8 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
         // See scr_Hoard.cs for changing parent on drop
+        // Move onto parent
+        if (dropOnParent) transform.parent = dropOnParent;
     }
 
     public void OnPointerDown(PointerEventData _eventData)

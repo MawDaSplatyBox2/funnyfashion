@@ -11,6 +11,7 @@ public class Hoard : MonoBehaviour, IDropHandler
         if (_eventData.pointerDrag != null)
         {
             //_eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            if (_eventData.pointerDrag.gameObject.GetComponent<Draggable>().hoardable)
             _eventData.pointerDrag.transform.SetParent(hoardHoard, true);
         }
     }
