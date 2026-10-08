@@ -226,7 +226,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6822171728318784866, guid: 6b78df3c8488d9846805dfd689b4d54f, type: 3}
       propertyPath: m_Name
-      value: Draggable2_Item
+      value: timekeeper_glasses_s
       objectReference: {fileID: 0}
     - target: {fileID: 7932483243050578257, guid: 6b78df3c8488d9846805dfd689b4d54f, type: 3}
       propertyPath: m_AnchoredPosition.x

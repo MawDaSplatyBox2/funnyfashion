@@ -343,7 +343,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3176677096077215453, guid: 10e8685ece5220444bfe7ea88362d409, type: 3}
       propertyPath: m_Name
-      value: Draggable2_Points
+      value: Square
       objectReference: {fileID: 0}
     - target: {fileID: 5583418360933184926, guid: 10e8685ece5220444bfe7ea88362d409, type: 3}
       propertyPath: 'imageAnchorPoints.Array.data[0]'

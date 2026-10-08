@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useWorldScaling: 0
-  useAnchorScaling: 0
+  scalingType: 1
   image: {fileID: 710216749610947603}
   draggableParent: {fileID: 8391380839823925912}
   scale: {x: 1, y: 1, z: 1}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 8998322131315095275}
   - component: {fileID: 6265733345248444764}
   m_Layer: 0
-  m_Name: Draggable2
+  m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,6 +1,5 @@
 using NUnit.Framework;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEngine.RuleTile.TilingRuleOutput;
@@ -36,10 +35,12 @@ public class ResizeImage : MonoBehaviour
 
     private void OnValidate()
     {
-        if (EditorApplication.isPlaying) return;
+        if (Application.isPlaying) return;
 
         Image _image = UpdateImageSize();
         AnchorScalingPoints(_image);
+
+        if (draggableParent) draggableParent.gameObject.name = _image.sprite.name;
     }
 
     private void Start()
