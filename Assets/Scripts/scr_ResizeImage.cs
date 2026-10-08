@@ -23,7 +23,7 @@ public class ResizeImage : MonoBehaviour
     [Tooltip("Whether to also copy the z scale from the original image.")]
     public bool inheritZScale = false;
 
-    [SerializeField] private Vector3 currentClassicScale = new Vector3(1f, 1f, 1f);
+    [DisplayWithoutEdit, SerializeField] private Vector3 currentClassicScale = new Vector3(1f, 1f, 1f);
     public Vector3 minClassicScale = new Vector3(1f, 1f, 1f);
     public Vector3 maxClassicScale = new Vector3(1f, 1f, 1f);
     [Header("Anchor Scaling")]

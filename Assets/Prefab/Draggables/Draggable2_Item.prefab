@@ -170,11 +170,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4594976313562551841, guid: 6b78df3c8488d9846805dfd689b4d54f, type: 3}
       propertyPath: minClassicScale.x
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 4594976313562551841, guid: 6b78df3c8488d9846805dfd689b4d54f, type: 3}
       propertyPath: minClassicScale.y
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 4870942762878421010, guid: 6b78df3c8488d9846805dfd689b4d54f, type: 3}
       propertyPath: m_IsActive
