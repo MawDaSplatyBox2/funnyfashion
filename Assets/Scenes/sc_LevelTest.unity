@@ -1080,6 +1080,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4140785887469427023, guid: e7e7d4a3b62327d4e8082e250b29033c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.1875
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140785887469427023, guid: e7e7d4a3b62327d4e8082e250b29033c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 1
       objectReference: {fileID: 0}
@@ -1091,6 +1095,14 @@ PrefabInstance:
       propertyPath: resetToParent
       value: 
       objectReference: {fileID: 1851938474}
+    - target: {fileID: 6522729894264804018, guid: e7e7d4a3b62327d4e8082e250b29033c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.1875
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522729894264804018, guid: e7e7d4a3b62327d4e8082e250b29033c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 7827385148137843500, guid: e7e7d4a3b62327d4e8082e250b29033c, type: 3}
       propertyPath: resetToParent
       value: 
@@ -1734,7 +1746,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1974867983}
   m_Direction: 0
   m_Value: 0.5
-  m_Size: 0.2846
+  m_Size: 0.72123057
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1961,6 +1973,10 @@ PrefabInstance:
       propertyPath: resetToParent
       value: 
       objectReference: {fileID: 1851938474}
+    - target: {fileID: 5944175131952270069, guid: e7e7d4a3b62327d4e8082e250b29033c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.1875
+      objectReference: {fileID: 0}
     - target: {fileID: 6352390364322321889, guid: e7e7d4a3b62327d4e8082e250b29033c, type: 3}
       propertyPath: resetToParent
       value: 
@@ -2418,10 +2434,18 @@ PrefabInstance:
       propertyPath: resetToParent
       value: 
       objectReference: {fileID: 1851938474}
+    - target: {fileID: 2770470887716896394, guid: e7e7d4a3b62327d4e8082e250b29033c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3181646011296588190, guid: e7e7d4a3b62327d4e8082e250b29033c, type: 3}
       propertyPath: resetToParent
       value: 
       objectReference: {fileID: 1851938474}
+    - target: {fileID: 4140785887469427023, guid: e7e7d4a3b62327d4e8082e250b29033c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5128912961992536612, guid: e7e7d4a3b62327d4e8082e250b29033c, type: 3}
       propertyPath: resetToParent
       value: 
@@ -3277,6 +3301,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1851938474}
     - target: {fileID: 2770470887716896394, guid: e7e7d4a3b62327d4e8082e250b29033c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.1875
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770470887716896394, guid: e7e7d4a3b62327d4e8082e250b29033c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 1
       objectReference: {fileID: 0}
@@ -4101,10 +4129,22 @@ PrefabInstance:
       propertyPath: resetToParent
       value: 
       objectReference: {fileID: 1851938474}
+    - target: {fileID: 2770470887716896394, guid: e7e7d4a3b62327d4e8082e250b29033c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3181646011296588190, guid: e7e7d4a3b62327d4e8082e250b29033c, type: 3}
       propertyPath: resetToParent
       value: 
       objectReference: {fileID: 1851938474}
+    - target: {fileID: 4140785887469427023, guid: e7e7d4a3b62327d4e8082e250b29033c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.1875
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140785887469427023, guid: e7e7d4a3b62327d4e8082e250b29033c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5128912961992536612, guid: e7e7d4a3b62327d4e8082e250b29033c, type: 3}
       propertyPath: resetToParent
       value: 

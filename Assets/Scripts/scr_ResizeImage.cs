@@ -17,6 +17,10 @@ public class ResizeImage : MonoBehaviour
     public bool inheritZScale = false;
     [Header("Anchor Scaling")]
     public List<GameObject> imageAnchorPoints = new List<GameObject>(4);
+    [Header("Debug")]
+    [DisplayWithoutEdit, SerializeField] private Vector3 baseScale = new Vector3(1f,1f,1f);
+    [DisplayWithoutEdit, SerializeField] private Vector3[] v_current = new Vector3[4];
+    [DisplayWithoutEdit, SerializeField] private Vector3[] v_new = new Vector3[4];
 
     private void OnValidate()
     {
@@ -29,6 +33,7 @@ public class ResizeImage : MonoBehaviour
         UpdateImageSize();
     }
 
+    #region Setup
     private void AnchorScalingPoints(Image _image)
     {
         Vector3[] v = new Vector3[4];
@@ -58,13 +63,18 @@ public class ResizeImage : MonoBehaviour
         imageAnchorPoints = _newList;
     }
 
+    public Image GetImage()
+    {
+        if (image) return image;
+        else return GetComponent<Image>();
+    }
+
     public Image UpdateImageSize(Image _image = null)
     {
         // Get image
         if (!_image)
         {
-            if (image) _image = image;
-            else _image = GetComponent<Image>();
+            _image = GetImage();
         }
 
         //
@@ -73,8 +83,58 @@ public class ResizeImage : MonoBehaviour
         var _scale = new Vector3(scale.x * _size.x, scale.y * _size.y, scale.z * (inheritZScale ? _size.z : 1));
 
         transform.localScale = new Vector3(scale.x * _size.x, scale.y * _size.y, scale.z * (inheritZScale ? _size.z : 1));
-        
+        baseScale = transform.localScale;
         // Return image
         return _image;
     }
+    #endregion
+
+    private void Update()
+    {
+        if (useAnchorScaling) UpdateAnchorScale();
+    }
+
+    #region In-game Anchor Scaling
+    private void UpdateAnchorScale()
+    {
+        Image _image = GetImage();
+        v_current = new Vector3[4];
+        v_new = new Vector3[4];
+        _image.rectTransform.GetWorldCorners(v_current);
+
+        if (imageAnchorPoints.Count == 4)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                if (imageAnchorPoints[i]) v_new[i] = imageAnchorPoints[i].transform.localToWorldMatrix.GetPosition();
+                else v_new[i] = v_current[i];
+            }
+
+            var _canvas = GetComponentInParent<Canvas>();
+
+            // Check for changes in anchor position
+            for (int i = 0; i < 4; i++)
+            {
+                int j = (i + 2) % 4;
+                if (v_new[i] != v_current[i])
+                {
+                    Debug.Log("poop1 | " + i + " " + v_current[i] + "->" + v_new[i] + ": " + (v_current[i] - v_new[i]));
+                    //Vector3 _newSize = new Vector3(v_new[i].x - v_current[i].x)
+                    Debug.Log("poop2 | " + i + "/" + j + " " + v_new[i] + "/" + v_new[j]);
+                    /*_image.transform.localScale = new Vector3(
+                        baseScale.x * Mathf.Abs(v_new[j].x - v_new[i].x),
+                        baseScale.y * Mathf.Abs(v_new[j].y - v_new[i].y),
+                        1
+                        );*/
+                    _image.rectTransform.localScale = new Vector3(
+                        baseScale.x * Mathf.Abs(v_new[j].x - v_new[i].x),
+                        baseScale.y * Mathf.Abs(v_new[j].y - v_new[i].y),
+                        1
+                        );
+                }
+            }
+        }
+    }
+
+    #endregion
 }

@@ -2,11 +2,16 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+public enum DraggableType
+{
+    Item,
+    ScaleAnchor,
+}
 public class Draggable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
 {
     [Header("Objects with this script class can be\ngrabbed and dragged with the mouse.")]
     public bool disableOnStart = true;
-    public bool hoardable = false;
+    public DraggableType draggableType = DraggableType.Item;
     [Header("Components")]
     public Transform resetToParent;
     public Transform dropOnParent;
@@ -57,6 +62,13 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
     {
         //Debug.Log("OnDrag");
         rectTransform.anchoredPosition += _eventData.delta / canvas.scaleFactor; // Move position based on cursor movement, adjusted by canvas scale
+
+        switch (draggableType)
+        {
+            case DraggableType.ScaleAnchor:
+
+                break;
+        }
     }
 
     public void OnEndDrag(PointerEventData _eventData)
