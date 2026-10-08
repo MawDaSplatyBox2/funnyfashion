@@ -54,7 +54,7 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
         canvasGroup.alpha = 0.6f;
         canvasGroup.blocksRaycasts = false;
         // Move onto parent
-        if (resetToParent) transform.parent = resetToParent;
+        if (resetToParent) transform.SetParent(resetToParent, true);
         transform.SetAsLastSibling(); // This also moves on top of other instances on the same sorting layer
     }
 

@@ -91,13 +91,28 @@ MonoBehaviour:
   useWorldScaling: 0
   useAnchorScaling: 0
   image: {fileID: 710216749610947603}
+  draggableParent: {fileID: 8391380839823925912}
   scale: {x: 1, y: 1, z: 1}
   inheritZScale: 0
+  currentClassicScale: {x: 1, y: 1, z: 1}
+  minClassicScale: {x: 1, y: 1, z: 1}
+  maxClassicScale: {x: 1, y: 1, z: 1}
   imageAnchorPoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  baseScale: {x: 1, y: 1, z: 1}
+  v_current:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  v_new:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
 --- !u!1 &3176677096077215453
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,8 +165,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableOnStart: 1
-  hoardable: 1
+  draggableType: 0
   resetToParent: {fileID: 0}
+  dropOnParent: {fileID: 0}
   canvas: {fileID: 0}
   rectTransform: {fileID: 0}
   canvasGroup: {fileID: 0}

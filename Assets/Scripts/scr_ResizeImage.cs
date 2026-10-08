@@ -1,20 +1,32 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
+public enum ResizeImageType
+{
+    None,
+    Classic,
+    AnchorScale,
+}
 public class ResizeImage : MonoBehaviour
 {
     public bool useWorldScaling = false;
-    public bool useAnchorScaling = false;
-    public Image image;
+    public ResizeImageType scalingType = ResizeImageType.Classic;
+    public Image image; // Can be assigned in inspector, or picked up automatically
+    public Draggable draggableParent; // Must be assigned in inspector
     
     [Header("Classic Scaling")]
     [Tooltip("Modify the scale of the image by this amount.")]
     public Vector3 scale = new Vector3(1f, 1f, 1f);
     [Tooltip("Whether to also copy the z scale from the original image.")]
     public bool inheritZScale = false;
+
+    [SerializeField] private Vector3 currentClassicScale = new Vector3(1f, 1f, 1f);
+    public Vector3 minClassicScale = new Vector3(1f, 1f, 1f);
+    public Vector3 maxClassicScale = new Vector3(1f, 1f, 1f);
     [Header("Anchor Scaling")]
     public List<GameObject> imageAnchorPoints = new List<GameObject>(4);
     [Header("Debug")]
@@ -24,6 +36,8 @@ public class ResizeImage : MonoBehaviour
 
     private void OnValidate()
     {
+        if (EditorApplication.isPlaying) return;
+
         Image _image = UpdateImageSize();
         AnchorScalingPoints(_image);
     }
@@ -91,10 +105,44 @@ public class ResizeImage : MonoBehaviour
 
     private void Update()
     {
-        if (useAnchorScaling) UpdateAnchorScale();
+        if (scalingType == ResizeImageType.AnchorScale) UpdateAnchorScale();
+        else if (scalingType == ResizeImageType.Classic) UpdateClassicScale();
     }
 
-    #region In-game Anchor Scaling
+    #region In-game Scaling
+    public void UpdateClassicScale()
+    {
+        Debug.Log(draggableParent.transform.parent.name + "/" + draggableParent.resetToParent.name + "\n" +
+            draggableParent.transform.parent.childCount + "/" + (draggableParent.transform.GetSiblingIndex()+1));
+        if (draggableParent.transform.parent == draggableParent.resetToParent
+            && draggableParent.transform.parent.childCount == draggableParent.transform.GetSiblingIndex()+1)
+        {
+            var _scroll = Input.GetAxis("Mouse ScrollWheel");
+
+            if (_scroll != 0)
+            {
+                Debug.Log("Scroll = " + _scroll);
+                currentClassicScale = new Vector3(
+                    Mathf.Clamp(currentClassicScale.x + _scroll, minClassicScale.x, maxClassicScale.x),
+                    Mathf.Clamp(currentClassicScale.y + _scroll, minClassicScale.y, maxClassicScale.y),
+                    Mathf.Clamp(currentClassicScale.z + _scroll, minClassicScale.z, maxClassicScale.z)
+                    );
+            }
+
+            Image _image = GetImage();
+            if (_image)
+            {
+                _image.rectTransform.localScale = new Vector3(
+                    (currentClassicScale.x * baseScale.x),
+                    (currentClassicScale.y * baseScale.y),
+                    (currentClassicScale.z * baseScale.z)
+                    );
+            } else
+            {
+                Debug.LogError("No image found");
+            }
+        }
+    }
     private void UpdateAnchorScale()
     {
         Image _image = GetImage();
@@ -121,11 +169,6 @@ public class ResizeImage : MonoBehaviour
                     Debug.Log("poop1 | " + i + " " + v_current[i] + "->" + v_new[i] + ": " + (v_current[i] - v_new[i]));
                     //Vector3 _newSize = new Vector3(v_new[i].x - v_current[i].x)
                     Debug.Log("poop2 | " + i + "/" + j + " " + v_new[i] + "/" + v_new[j]);
-                    /*_image.transform.localScale = new Vector3(
-                        baseScale.x * Mathf.Abs(v_new[j].x - v_new[i].x),
-                        baseScale.y * Mathf.Abs(v_new[j].y - v_new[i].y),
-                        1
-                        );*/
                     _image.rectTransform.localScale = new Vector3(
                         baseScale.x * Mathf.Abs(v_new[j].x - v_new[i].x),
                         baseScale.y * Mathf.Abs(v_new[j].y - v_new[i].y),
