@@ -102,6 +102,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  scrollAmount: {x: 0, y: 0}
   baseScale: {x: 1, y: 1, z: 1}
   v_current:
   - {x: 0, y: 0, z: 0}
@@ -166,6 +167,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   disableOnStart: 1
   draggableType: 0
+  isDragging: 0
+  resizableImage: {fileID: 0}
   resetToParent: {fileID: 0}
   dropOnParent: {fileID: 0}
   canvas: {fileID: 0}

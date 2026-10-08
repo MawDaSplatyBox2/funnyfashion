@@ -29,6 +29,7 @@ public class ResizeImage : MonoBehaviour
     [Header("Anchor Scaling")]
     public List<GameObject> imageAnchorPoints = new List<GameObject>(4);
     [Header("Debug")]
+    [DisplayWithoutEdit, SerializeField] public Vector2 scrollAmount = Vector2.zero;
     [DisplayWithoutEdit, SerializeField] private Vector3 baseScale = new Vector3(1f,1f,1f);
     [DisplayWithoutEdit, SerializeField] private Vector3[] v_current = new Vector3[4];
     [DisplayWithoutEdit, SerializeField] private Vector3[] v_new = new Vector3[4];
@@ -115,19 +116,19 @@ public class ResizeImage : MonoBehaviour
     {
         Debug.Log(draggableParent.transform.parent.name + "/" + draggableParent.resetToParent.name + "\n" +
             draggableParent.transform.parent.childCount + "/" + (draggableParent.transform.GetSiblingIndex()+1));
-        if (draggableParent.transform.parent == draggableParent.resetToParent
-            && draggableParent.transform.parent.childCount == draggableParent.transform.GetSiblingIndex()+1)
+        /*if (draggableParent.transform.parent == draggableParent.resetToParent
+            && draggableParent.transform.parent.childCount == draggableParent.transform.GetSiblingIndex()+1)*/
         {
-            var _scroll = Input.GetAxis("Mouse ScrollWheel");
-
-            if (_scroll != 0)
+            if (scrollAmount != Vector2.zero)
             {
-                Debug.Log("Scroll = " + _scroll);
+                scrollAmount *= 0.1f;
+                Debug.Log("Scroll = " + scrollAmount);
                 currentClassicScale = new Vector3(
-                    Mathf.Clamp(currentClassicScale.x + _scroll, minClassicScale.x, maxClassicScale.x),
-                    Mathf.Clamp(currentClassicScale.y + _scroll, minClassicScale.y, maxClassicScale.y),
-                    Mathf.Clamp(currentClassicScale.z + _scroll, minClassicScale.z, maxClassicScale.z)
+                    Mathf.Clamp(currentClassicScale.x + scrollAmount.y, minClassicScale.x, maxClassicScale.x),
+                    Mathf.Clamp(currentClassicScale.y + scrollAmount.y, minClassicScale.y, maxClassicScale.y),
+                    Mathf.Clamp(currentClassicScale.z + scrollAmount.y, minClassicScale.z, maxClassicScale.z)
                     );
+                scrollAmount = Vector2.zero;
             }
 
             Image _image = GetImage();
